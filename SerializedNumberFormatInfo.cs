@@ -7,7 +7,7 @@ namespace Teva.Common.Cultures
 {
     public class SerializedNumberFormatInfo
     {
-        public void PopulateFromCultureInfo(System.Globalization.CultureInfo Culture)
+        public void PopulateFromCultureInfo(CultureInfo Culture)
         {
             this.CurrencyDecimalDigits = Culture.NumberFormat.CurrencyDecimalDigits;
             this.CurrencyDecimalSeparator = Culture.NumberFormat.CurrencyDecimalSeparator;
@@ -37,7 +37,7 @@ namespace Teva.Common.Cultures
             this.PositiveInfinitySymbol = Culture.NumberFormat.PositiveInfinitySymbol;
             this.PositiveSign = Culture.NumberFormat.PositiveSign;
         }
-        public void PopulateIntoCultureInfo(System.Globalization.CultureInfo Culture)
+        public void PopulateIntoCultureInfo(CultureInfo Culture)
         {
             Culture.NumberFormat.CurrencyDecimalDigits = this.CurrencyDecimalDigits;
             Culture.NumberFormat.CurrencyDecimalSeparator = this.CurrencyDecimalSeparator;
