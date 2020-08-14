@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text.Json;
 
 namespace Teva.Common.Cultures
 {
@@ -23,7 +21,7 @@ namespace Teva.Common.Cultures
             };
             Details.NumberFormatInfo.PopulateFromCultureInfo(Culture);
             Details.DateTimeFormatInfo.PopulateFromCultureInfo(Culture);
-            var JSON = Newtonsoft.Json.JsonConvert.SerializeObject(Details, Newtonsoft.Json.Formatting.None);
+            var JSON = JsonSerializer.Serialize(Details);
             System.IO.Directory.CreateDirectory(System.IO.Path.Combine(System.AppContext.BaseDirectory, "cultures"));
             System.IO.File.WriteAllText(System.IO.Path.Combine(System.AppContext.BaseDirectory, "cultures", Culture.Name.ToLower() + ".json"), JSON, System.Text.Encoding.UTF32);
         }

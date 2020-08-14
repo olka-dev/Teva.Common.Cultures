@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace Teva.Common.Cultures
 {
     public class SerializedDateTimeFormatInfo
     {
-        public void PopulateFromCultureInfo(System.Globalization.CultureInfo Culture)
+        public void PopulateFromCultureInfo(CultureInfo Culture)
         {
             this.AbbreviatedDayNames = Culture.DateTimeFormat.AbbreviatedDayNames;
             this.AbbreviatedMonthGenitiveNames = Culture.DateTimeFormat.AbbreviatedMonthGenitiveNames;
@@ -30,7 +28,7 @@ namespace Teva.Common.Cultures
             this.TimeSeparator = Culture.DateTimeFormat.TimeSeparator;
             this.YearMonthPattern = Culture.DateTimeFormat.YearMonthPattern;
         }
-        public void PopulateIntoCultureInfo(System.Globalization.CultureInfo Culture)
+        public void PopulateIntoCultureInfo(CultureInfo Culture)
         {
             Culture.DateTimeFormat.AbbreviatedDayNames = this.AbbreviatedDayNames;
             Culture.DateTimeFormat.AbbreviatedMonthGenitiveNames = this.AbbreviatedMonthGenitiveNames;
